@@ -3303,7 +3303,7 @@ static bool submit_upstream_work(struct work *work, CURL *curl, char *curl_err_s
     char *ASCIIPoWHash = bin2hex(work->data, 32);
     char *ASCIINonce = bin2hex((uint8_t*) &tmp, 8);
 
-    snprintf(s, 128 + 16 + 512, "{\"jsonrpc\":\"2.0\", \"method\":\"eth_submitWork\", \"params\":[\"0x%s\", \"0x%s\", \"0x%s\"],\"id\":1}", ASCIINonce, ASCIIPoWHash, ASCIIMixHash);
+    snprintf(s, 128 + 16 + 512, "{\"jsonrpc\":\"2.0\", \"method\":\"etrue_submitWork\", \"params\":[\"0x%s\", \"0x%s\", \"0x%s\"],\"id\":1}", ASCIINonce, ASCIIPoWHash, ASCIIMixHash);
 
     free(ASCIINonce);
     free(ASCIIMixHash);
@@ -3507,8 +3507,8 @@ out:
 }
 
 
-char eth_getwork_rpc[] = "{\"jsonrpc\":\"2.0\",\"method\":\"eth_getWork\",\"params\":[],\"id\":1}";
-char eth_gethighestblock_rpc[] = "{\"jsonrpc\":\"2.0\",\"method\":\"eth_getBlockByNumber\",\"params\":[\"latest\", false],\"id\":1}";
+char eth_getwork_rpc[] = "{\"jsonrpc\":\"2.0\",\"method\":\"etrue_getWork\",\"params\":[],\"id\":1}";
+char eth_gethighestblock_rpc[] = "{\"jsonrpc\":\"2.0\",\"method\":\"etrue_getBlockByNumber\",\"params\":[\"latest\", false],\"id\":1}";
 
 static bool get_upstream_work(struct work *work, CURL *curl, char *curl_err_str)
 {
